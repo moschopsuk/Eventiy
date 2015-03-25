@@ -1,0 +1,311 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color:#F2F2F2;
+}
+
+/** Main Body
+ ---------------------------------------------------------*/
+
+#page-content {
+  margin-top:90px;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.spacer {
+  margin-top:10px
+}
+
+/** Navbar
+ ---------------------------------------------------------*/
+.navbar-default {
+  background-color: #42186c;
+  border-color: #786292;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #786292;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #786292;
+}
+.navbar-default .navbar-toggle {
+  border-color: #786292;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #786292;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #786292;
+  }
+
+  .navbar-default label {
+    color: #ffffff;
+  }
+}
+
+/** Puruple Button
+ ---------------------------------------------------------*/
+
+#login-nav input {
+  margin-bottom: 15px;
+}
+
+.btn-purple {
+  color:#fff;
+  background-color:#42186C;
+  border-color:#483D8B;
+  border:0px;
+}
+
+.btn-purple:hover {
+  background-color:#483D8B;
+  border:0px;
+}
+
+/** Event Layout
+ ---------------------------------------------------------*/
+.event-inner-content {
+  padding: 35px;
+  background-color: #fff;
+  border: 1px solid #dadada;
+  border-top: none;
+}
+
+.well {
+  background-color: #fff;
+  padding: 30px;
+  border: 1px solid #DADADA;
+  overflow: hidden;
+  clear: both;
+}
+
+.well-small {
+  padding: 5px;
+}
+
+.post-divider {
+  border-top: 1px solid #dadada;
+  padding-bottom: 15px;
+}
+
+.post-time {
+  color: #ccc;
+  size: 6px;
+}
+
+.create-post {
+  color: #fff;
+  background-color: #786292;
+  padding: 10px;
+  clear: both;
+}
+
+.img-thumbnail {
+  margin-right: 10px;
+}
+
+/** Radio player
+ ---------------------------------------------------------*/
+
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+
+.bs-callout h4 {
+  margin-top: 0;
+}
+
+.bs-callout p:last-child {
+  margin-bottom: 0;
+}
+.bs-callout code,
+.bs-callout .highlight {
+  background-color: #fff;
+}
+ 
+/* Themes for different contexts */
+.bs-callout-default {
+  border-left-color: #42186c;
+}
+
+.bs-callout-default h4 {
+  color: #42186c;
+}
+
+.bs-callout-tweet {
+  border-left-color: #4099FF;
+}
+
+.bs-callout-tweet h4 {
+  color: #4099FF;
+}
+
+.bs-callout-photo {
+  border-left-color: #228B22;
+}
+
+.bs-callout-photo h4 {
+  color: #228B22;
+}
+/** Radio player
+ ---------------------------------------------------------*/
+.btn-radioplayer {
+  background-color: #660000;
+  color: #fff;
+  display: block;
+  width: 100%;
+}
+
+.btn-radioplayer:hover {
+  background-color:#800000;
+  color: #fff;
+}
+
+/** Video JS fix
+ ---------------------------------------------------------*/
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56%; /* video dimensions – height/width */
+  padding-top: 0px;
+  height: 0;
+  z-index: 1000;
+}
+
+.videoWrapper .video-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+  background: #000000;
+}
+
+.videoWrapper object,
+.videoWrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% !important;
+  z-index: 1;
+}
+
+.vjs-control-bar {
+  z-index: 1002;
+}
+
+.vjs-big-play-button {
+  z-index: 1002;
+}
+
+.vjs-spinner {
+  display: none !important;
+}
+
+.vjs-poster {
+  z-index: 1;
+}
+
+/** Dialog
+ ---------------------------------------------------------*/
+
+.panel-default > .panel-heading {
+  color: #fff;
+  background-color: #42186c;
+  border-color: #786292;
+}
+
+.list-container {
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 420px;
+}
+
+.list-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.list-container::-webkit-scrollbar-track {
+  background-color: rgba(113,112,107,0.1);
+  -webkit-border-radius: 5px;
+}
+
+.list-container::-webkit-scrollbar-thumb {
+  background: #42186c;
+  -webkit-border-radius: 6px;
+}
+
+.list-container::-webkit-scrollbar-thumb:vertical:hover,
+.list-container::-webkit-scrollbar-thumb:horizontal:hover {
+  background: #42186c;
+}
+
+/** Footers
+ ---------------------------------------------------------*/
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+}

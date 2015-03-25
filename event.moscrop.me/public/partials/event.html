@@ -1,0 +1,49 @@
+<div class="container" id="page-content">
+    <div id="alerts-container"></div>
+
+    <div class="col-sm-12 col-md-8 col-xs-12 pull-left" infinite-scroll="loadMore()">
+      
+        <div class="videoWrapper">
+             <!--<video videofix class="video-js vjs-default-skin" width="100%" controls autoplay preload="auto">
+                <source src="//la1tv-wowza1.lancs.ac.uk:1935/live/ngrp:studio_all/playlist.m3u8" type="video/mp4">
+                <source src="//la1tv-wowza1.lancs.ac.uk:1935/live/ngrp:studio_all/playlist.m3u8" type="application/x-mpegURL">
+            </video>-->
+
+            <iframe class="video-js" width="100%" frameborder="0" ng-src="{{event_details.video_stream}}" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+        </div>
+
+            <div ng-show="isLoggedIn" class="create-post">
+                <div class="pull-right">
+                    <button class="btn btn-primary btn-purple" data-ng-click="addPost(postForm)">Add Content</button>
+                </div>
+                <h4>Producer Tools</h4>
+            </div>
+
+        <div class="event-inner-content">
+            <div ng-repeat="post in posts">
+                <div ng-include="'partials/widgets/' + post.base.payload_type + 'Widget.html'"></div>
+            </div>
+            <div class="text-center">
+                <a ng-show="moreContent" class="btn btn-default btn-lg btn-primary" ng-click="loadMore()">Load More</a>
+                <!-- <h4 ng-show="!(moreContent)" >End of content</h4> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4 hidden-xs">
+        
+        <p><a class="btn btn-default btn-lg btn-radioplayer" ng-click="radioPlayer()">Listen to Bailrigg FM</a></p>
+
+        <div class="well options">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="enable_notifications" ng-change="request_nofications()" > Enable Notifications
+                </label>
+            </div>
+        </div>
+
+        <!-- <a class="twitter-timeline" ng-href="https://twitter.com/hashtag/{{event_details.hashtag}}" data-widget-id="535871784957259776">#{{event_details.hashtag}} Tweets</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> -->
+
+    </div>
+</div>

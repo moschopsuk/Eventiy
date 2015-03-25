@@ -1,0 +1,11 @@
+<div class="bs-callout bs-callout-photo" id="post-{{post.base.id}}">
+	<span class="pull-right post-time">{{post.base.created_at | fromNow}} <span class="glyphicon glyphicon-time"></span></span>
+	<p> </p>
+
+	<div class="row">
+		<a href="/images/photos/{{post.payload.filename}}" ngx-lightbox="gallery"><img class="img-thumbnail center-block" ng-src="/images/photos/thumbs/{{post.payload.filename}}"/></a>
+	</div>
+
+	<div class="spacer"></div>
+	<p>{{post.payload.caption}}</p>
+</div>

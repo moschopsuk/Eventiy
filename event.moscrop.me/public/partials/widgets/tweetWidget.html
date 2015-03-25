@@ -1,0 +1,12 @@
+<div class="bs-callout bs-callout-tweet clearfix" id="post-{{post.base.id}}">
+	<span class="pull-right post-time">{{post.base.created_at | fromNow}} <span class="glyphicon glyphicon-time"></span></span>
+	<h4>@{{post.payload.screen_name}} tweets:</h4>
+	<p>
+		<div class="media">
+			<a target="_blank" ng-href="https://twitter.com/intent/user?user_id={{post.payload.tuid}}"><img ng-src="{{post.payload.avatar}}" class="img-thumbnail" style="float:left"/></a>
+			<div class="media-body">
+				<p style="clear:both" ng-bind-html="post.payload.text | tweet"></p>
+			</div>
+		</div>	
+	</p>
+</div>

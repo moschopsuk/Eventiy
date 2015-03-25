@@ -1,0 +1,121 @@
+<div class="modal-header">
+    <h3 class="modal-title">Add Post</h3>
+</div>
+
+ <div class="modal-body">
+ 	<div class="alert alert-danger" ng-bind="error" ng-show="error"></div>
+
+     <accordion close-others="oneAtATime">
+
+        <accordion-group is-open="status.open1">
+            <accordion-heading>
+                Text <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open1, 'glyphicon-chevron-right': !status.open1}"></i>
+            </accordion-heading>
+            <div class="col-md-12">
+                <form id="postTextForm" method="post" class="form-horizontal">
+                    <input type="hidden" name="event_id" ng-model="post.event_id" ng-init="post.event_id = event_id" />
+                    <input type="hidden" name="user_id" ng-model="post.user_id" ng-init="post.user_id = user_id" />
+                    <input type="hidden" name="payload_type" ng-model="post.payload_type" ng-init="post.payload_type = 'text'"  />
+
+                    <div class="form-group">
+                        <label class="control-label" for="headingInput">Heading</label>
+                        <input id="headingInput" name="headingInput" type="text" class="form-control input-md" ng-model="post.header">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="bodyInput">Main Body</label>                 
+                        <textarea class="form-control" rows="5" id="bodyInput" name="bodyInput" ng-model="post.body"></textarea>
+                    </div>
+
+                    <div class="form-group pull-right">
+                        <button type="submit" class="btn btn-default btn-purple" ng-click="addPost(post)">Submit</button>
+                    </div>
+                </form>
+            </div>
+            
+        </accordion-group>
+
+        <accordion-group is-open="status.open2">
+            <accordion-heading>
+                Photo <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open2, 'glyphicon-chevron-right': !status.open2}"></i>
+            </accordion-heading>
+
+            <div class="col-md-12">
+            	<form id="postImage" method="post" class="form-horizontal">
+            		<input type="hidden" name="event_id" ng-model="photo.event_id" ng-init="photo.event_id = event_id" />
+                    <input type="hidden" name="user_id" ng-model="photo.user_id" ng-init="photo.user_id = user_id" />
+                    <input type="hidden" name="payload_type" ng-model="photo.payload_type" ng-init="photo.payload_type = 'photo'"  />
+
+                     <div class="form-group">
+                        <label class="control-label" for="fileInput">Upload Photo</label>
+                        <input type="file" ng-file-select ng-model="picFile" name="file" accept="image/*" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="caption">Caption</label>
+                        <textarea class="form-control" rows="5" id="caption" name="caption" ng-model="photo.caption"></textarea>
+                    </div>
+
+                    <div ng-show="progress != 0">
+                    	<progressbar value="progress" class="progress-striped active" ><b>{{progress}}%</b></progressbar>
+                    </div>
+
+					<span ng-show="progress == 100">Upload Successful</span>
+
+                    <div class="form-group pull-right">
+                        <button type="submit" class="btn btn-default btn-purple" ng-click="addPhoto(photo, picFile)">Submit</button>
+                    </div>
+                </form>
+            </div>
+
+
+        </accordion-group>
+
+        <accordion-group is-open="status.open3">
+            <accordion-heading>
+                Tweets <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open3, 'glyphicon-chevron-right': !status.open3}"></i>
+            </accordion-heading>
+
+            
+            <form role="form">  
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="input-group input-group">
+                            <input type="text" class="form-control" placeholder="#hastag" name="hashtag" ng-model="search.hashtag" />
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-purple" ng-click="searchHastag(search)" ><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="spacer"></div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="list-container">
+                        <div class="well well-small" ng-repeat="tweet in tweets">
+                            <div class="pull-right">
+                                <button type="submit" class="btn btn-default btn-purple" ng-click="addTweet(tweet)" ><i class="glyphicon glyphicon-plus"></i></button>
+                            </div>
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" ng-src="{{tweet.user.profile_image_url}}">
+                                </div>
+                                <div class="media-body">
+                                    <p>{{tweet.text}}</p>
+                                    <h6><i class="glyphicon glyphicon-user"></i> {{tweet.user.screen_name}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </accordion-group>
+
+     </accordion>
+ </div>

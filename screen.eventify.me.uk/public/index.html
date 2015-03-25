@@ -1,0 +1,48 @@
+ <!doctype html>
+<html lang="en" xmlns:ng="http://angularjs.org" ng-app="screenApp">
+
+    <head>
+        <link rel="stylesheet" href="//static.eventify.me.uk/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//static.eventify.me.uk/css/angular-motion.min.css">
+        <link rel="stylesheet" href="//static.eventify.me.uk/css/video-js.min.css">
+        <link rel="stylesheet" href="//static.eventify.me.uk/css/screen.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+        <title>Eventify Screen</title>
+    </head>
+
+    <body>
+    	<!-- So we can grab the correct page query string -->
+    	<base href="/">
+        
+        <!-- Main view Injection -->
+        <div ng-controller="displayController">
+            <div class="debug-text">{{ displayId }}# {{ timeout }}</div>
+
+            <div class="viewport" ng-include="'/layouts/' + layout + '.html'" ></div>
+        </div>
+
+        <!-- Javascript -->
+        <script src="//static.eventify.me.uk/lib/jquery-2.1.1.min.js"></script>
+        <script src="//static.eventify.me.uk/lib/bootstrap.min.js"></script>
+        <script src="//static.eventify.me.uk/lib/moment.min.js"></script>
+        <script src="//static.eventify.me.uk/lib/socket.io.js"></script>
+        <script src="//static.eventify.me.uk/lib/angular/angular.min.js"></script>
+        <script src="//static.eventify.me.uk/lib/angular/angular-animate.min.js"></script>
+        <script src="//static.eventify.me.uk/lib/angular/angular-sanitize.min.js"></script>
+        <script src="//static.eventify.me.uk/lib/ui-bootstrap-tpls-0.12.0.min.js"></script>
+        <script src="//static.eventify.me.uk/lib/video.js"></script>
+
+        <script src="//static.eventify.me.uk/js/screen.js"></script>
+
+        <script src="//static.eventify.me.uk/js/controllers/DisplayController.js"></script>
+
+        <script src="//static.eventify.me.uk/js/directives/videofix.js"></script>
+        <script src="//static.eventify.me.uk/js/directives/TwitterWidget.js"></script>
+        <script src="//static.eventify.me.uk/js/directives/TickerWidget.js"></script>
+
+        <script>
+        videojs.options.flash.swf = "http://static.eventify.me.uk/player/video-js.swf"
+        </script>
+    </body>
+
+</html>
